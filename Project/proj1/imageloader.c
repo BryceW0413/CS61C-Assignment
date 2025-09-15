@@ -33,7 +33,7 @@ Image *readData(char *filename)
 	{
 		printf("unsupported format\n");
 		fclose(file);
-		exit(1);
+		exit(-1);
 	}
 
 	int cols, rows, maxColor;
