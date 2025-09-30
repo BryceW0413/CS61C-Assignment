@@ -44,7 +44,7 @@ vector_t also_bad_vector_new() {
 
     /* Initialize attributes */
     v.size = 1;
-    v.data = malloc(sizeof(int));
+    v.data = malloc(sizeof(int)*v.size);
     if (v.data == NULL) {
         allocation_failed();
     }
@@ -125,4 +125,9 @@ void vector_set(vector_t *v, size_t loc, int value) {
      */
 
     /* YOUR SOLUTION HERE */
+    if(loc < v->size){
+        * (v->data + loc) = value;
+    }else{
+        allocation_failed();
+    }
 }
